@@ -1,4 +1,3 @@
--- Defines the list of items
 list = {
     {sword = "stabby-stabby"},
     {bow = "you shoot arrows with it"},
@@ -9,18 +8,23 @@ list = {
     {tomato = 'l'}
 }
 
--- This determines the length of the output
-length = 4
+length = 6
 
--- Some holder variables
 n = 1
 l = 0
+a = {}
 
--- This iterator prints out random items in `list`
 for i, v in ipairs(list) do
     while l < length do
     l = l + 1
     n = math.random(#list)
+    table.insert(a, n)
+    print("")
+    print("a:")
+        for _, k in ipairs(a) do
+         print(k)
+        end
+    print("")
         for i2, v2 in pairs(list[n]) do
             print(l, n, i2, v2)
         end
